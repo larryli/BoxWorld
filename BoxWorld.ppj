@@ -1,0 +1,92 @@
+# 
+# 工程文件产生于 "Pelles C for Windows, 版本 6.00".
+# 警告! 请勿手工编辑此文件!
+# 
+
+POC_PROJECT_VERSION = 6.00#
+POC_PROJECT_TYPE = 0#
+POC_PROJECT_OUTPUTDIR = output#
+POC_PROJECT_RESULTDIR = .#
+POC_PROJECT_ARGUMENTS = #
+POC_PROJECT_WORKPATH = #
+POC_PROJECT_EXECUTOR = #
+CC = pocc.exe#
+AS = poasm.exe#
+RC = porc.exe#
+LINK = polink.exe#
+SIGN = posign.exe#
+CCFLAGS = -Tx86-coff -Ot -W1 -Gz -Ze -Go #
+ASFLAGS = -AIA32 -Gz#
+RCFLAGS = -r#
+LINKFLAGS = -machine:ix86 -subsystem:windows kernel32.lib user32.lib gdi32.lib comctl32.lib comdlg32.lib advapi32.lib delayimp.lib#
+SIGNFLAGS = -location:CU -store:MY -timeurl:http://timestamp.verisign.com/scripts/timstamp.dll -errkill#
+INCLUDE = $(PellesCDir)\Include\Win;$(PellesCDir)\Include#
+LIB = $(PellesCDir)\Lib\Win;$(PellesCDir)\Lib#
+
+# 
+# 构建 BoxWorld.exe.
+# 
+BoxWorld.exe: \
+	output\BoxWorld.res \
+	output\coolmenu.obj \
+	output\linktext.obj \
+	output\boxworld.obj
+	$(LINK) $(LINKFLAGS) -out:"$@" $**
+
+# 
+# 构建 BoxWorld.res.
+# 
+output\BoxWorld.res: \
+	BoxWorld.rc \
+	boxworldres.h \
+	boxworld.bmp \
+	Arrow.ico \
+	BoxInIcon.ico \
+	BoxLArrow.ico \
+	BoxOutIcon.ico \
+	BoxRArrow.ico \
+	DestIcon.ico \
+	FloorIcon.ico \
+	GreenLight.ico \
+	KeyboardIcon.ico \
+	ManFIcon.ico \
+	ManLIcon.ico \
+	ManRIcon.ico \
+	MouseIcon.ico \
+	RedLight.ico \
+	WallIcon.ico \
+	boxworld.exe.manifest \
+	hand.cur
+	$(RC) $(RCFLAGS) "$!" -Fo"$@"
+
+# 
+# 构建 coolmenu.obj.
+# 
+output\coolmenu.obj: \
+	coolmenu.c \
+	coolmenu.h \
+	guiddef.h
+	$(CC) $(CCFLAGS) "$!" -Fo"$@"
+
+# 
+# 构建 linktext.obj.
+# 
+output\linktext.obj: \
+	linktext.c \
+	linktext.h
+	$(CC) $(CCFLAGS) "$!" -Fo"$@"
+
+# 
+# 构建 boxworld.obj.
+# 
+output\boxworld.obj: \
+	boxworld.c \
+	boxmap.h \
+	boxworldres.h \
+	linktext.h \
+	coolmenu.h
+	$(CC) $(CCFLAGS) "$!" -Fo"$@"
+
+.EXCLUDEDFILES:
+
+.SILENT:
