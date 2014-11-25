@@ -1,4 +1,4 @@
-#ifndef __COOLMENU_H__
+﻿#ifndef __COOLMENU_H__
 #define __COOLMENU_H__
 #include <windows.h>
 

@@ -1,4 +1,4 @@
-/* COOL MENU
+﻿/* COOL MENU
 // Owner drawn menu adapted by Mike Caetano 1/2002
 // from source by James Brown, catch22.uk.net
 //

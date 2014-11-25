@@ -1,1 +1,1 @@
-void EnableLinkText(HWND hwnd);
+﻿void EnableLinkText(HWND hwnd);

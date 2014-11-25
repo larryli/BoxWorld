@@ -1,4 +1,4 @@
-#define NMAP 100
+﻿#define NMAP 100
 
 char *boxmap[NMAP] = {
 // 1

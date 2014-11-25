@@ -1,4 +1,4 @@
-/* --- The following code comes from D:\lcc\lib\wizard\stddef.tpl. */
+﻿/* --- The following code comes from D:\lcc\lib\wizard\stddef.tpl. */
 // This are the definitions for all symbols used in menus or string.
 #define IDM_UNDO 101
 #define IDM_RESET 102
