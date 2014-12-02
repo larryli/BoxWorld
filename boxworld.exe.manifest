@@ -3,7 +3,7 @@
 <assemblyIdentity
     name="Larry Li"
     processorArchitecture="x86"
-    version="1.6.3.0"
+    version="0.1.1.64"
     type="win32"/>
 <description>Larry Li</description> 
 <dependency>

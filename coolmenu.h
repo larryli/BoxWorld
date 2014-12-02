@@ -11,4 +11,6 @@ LRESULT CoolMenu_PopupContext(HWND hwnd, LPARAM lParam, int idx);
 LRESULT CoolMenu_MeasureItem(WPARAM wParam, LPARAM lParam);
 LRESULT CoolMenu_DrawItem(WPARAM wParam, LPARAM lParam);
 
+#define CoolMenu_IsEqualGUID(rguid1,rguid2)  (memcmp(&rguid1,&rguid2,sizeof(GUID)) == 0)
+
 #endif // __COOLMENU_H__

@@ -92,7 +92,7 @@ LRESULT CoolMenu_MeasureItem(WPARAM wParam, LPARAM lParam)
 			// cast mis.dwItemData as CoolMenuItemData
 			CoolMenuItemData *cmid = (CoolMenuItemData *)mis->itemData;
 			// confirm cool menu guid
-			if (IsEqualGUID(cmid->guid, COOLMENU_GUID)) {
+			if (CoolMenu_IsEqualGUID(cmid->guid, COOLMENU_GUID)) {
 				mis->itemHeight = cmid->itemheight;
 				mis->itemWidth  = cmid->itemwidth;
 				return TRUE;
@@ -116,7 +116,7 @@ static VOID CoolMenu_RemoveData(HMENU hmenu)
 			// cast mii.dwItemData as CoolMenuItemData
 			CoolMenuItemData *cmid = (CoolMenuItemData *)mii.dwItemData;
 			// check for cool menu guid
-			if (IsEqualGUID(cmid->guid, COOLMENU_GUID)) {
+			if (CoolMenu_IsEqualGUID(cmid->guid, COOLMENU_GUID)) {
 				// delete the bitmap
 				DeleteObject(cmid->hbmp_ref);
 				// release memory
@@ -565,7 +565,7 @@ LRESULT CoolMenu_DrawItem(WPARAM wParam, LPARAM lParam)
 			CoolMenuItemData *cmid = (CoolMenuItemData *)dis->itemData;
 
 			// check for cool menu guid
-			if (IsEqualGUID(cmid->guid, COOLMENU_GUID)) {
+			if (CoolMenu_IsEqualGUID(cmid->guid, COOLMENU_GUID)) {
 
 				HDC hdcmem;
 				HDC hOldDC;
